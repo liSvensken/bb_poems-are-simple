@@ -1,0 +1,25 @@
+@import "sizes";
+@import "extends";
+
+%set-max-height {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gl-page-content {
+  padding-left: var(--page-content-padding);
+  padding-right: var(--page-content-padding);
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gl-layout-wrapper {
+  @extend %set-max-height;
+}
+
+.gl-layout-content {
+  @extend %set-max-height;
+}

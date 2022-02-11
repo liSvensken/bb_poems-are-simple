@@ -1,0 +1,200 @@
+$full: 1280px;
+$huge: 1024px;
+$big: 848px;
+$middle: 768px;
+$small: 640px;
+$mobile: 480px;
+$xs: 360px;
+$xxs: 320px;
+
+@mixin for-fl-up {
+  @media screen and (min-width: $full) {
+    @content;
+  }
+}
+
+@mixin for-fl-down {
+  @media screen and (max-width: $full - 1) {
+    @content;
+  }
+}
+
+@mixin for-hg-up {
+  @media screen and (min-width: $huge) {
+    @content;
+  }
+}
+
+@mixin for-hg-down {
+  @media screen and (max-width: $huge - 1) {
+    @content;
+  }
+}
+
+@mixin for-bg-up {
+  @media screen and (min-width: $big) {
+    @content;
+  }
+}
+
+@mixin for-bg-down {
+  @media screen and (max-width: $big - 1) {
+    @content;
+  }
+}
+
+@mixin for-md-up {
+  @media screen and (min-width: $middle) {
+    @content;
+  }
+}
+
+@mixin for-md-down {
+  @media screen and (max-width: $middle - 1) {
+    @content;
+  }
+}
+
+@mixin for-sm-up {
+  @media screen and (min-width: $small) {
+    @content;
+  }
+}
+
+@mixin for-sm-down {
+  @media screen and (max-width: $small - 1) {
+    @content;
+  }
+}
+
+@mixin for-mb-up {
+  @media screen and (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin for-mb-down {
+  @media screen and (max-width: $mobile - 1) {
+    @content;
+  }
+}
+
+@mixin for-xs-up {
+  @media screen and (min-width: $xs) {
+    @content;
+  }
+}
+
+@mixin for-xs-down {
+  @media screen and (max-width: $xs - 1) {
+    @content;
+  }
+}
+
+@mixin for-xxs-up {
+  @media screen and (min-width: $xxs) {
+    @content;
+  }
+}
+
+@mixin for-xxs-down {
+  @media screen and (max-width: $xxs - 1) {
+    @content;
+  }
+}
+
+.flShow {
+  @include for-fl-up {
+    display: none !important;
+  }
+}
+
+.flHide {
+  @include for-fl-down {
+    display: none !important;
+  }
+}
+
+.hgShow {
+  @include for-hg-up {
+    display: none !important;
+  }
+}
+
+.hgHide {
+  @include for-hg-down {
+    display: none !important;
+  }
+}
+
+.bgShow {
+  @include for-bg-up {
+    display: none !important;
+  }
+}
+
+.bgHide {
+  @include for-bg-down {
+    display: none !important;
+  }
+}
+
+.mdShow {
+  @include for-md-up {
+    display: none !important;
+  }
+}
+
+.mdHide {
+  @include for-md-down {
+    display: none !important;
+  }
+}
+
+.smShow {
+  @include for-sm-up {
+    display: none !important;
+  }
+}
+
+.smHide {
+  @include for-sm-down {
+    display: none !important;
+  }
+}
+
+.mbShow {
+  @include for-mb-up {
+    display: none !important;
+  }
+}
+
+.mbHide {
+  @include for-mb-down {
+    display: none !important;
+  }
+}
+
+.xsShow {
+  @include for-xs-up {
+    display: none !important;
+  }
+}
+
+.xsHide {
+  @include for-xs-down {
+    display: none !important;
+  }
+}
+
+.xxsShow {
+  @include for-xxs-up {
+    display: none !important;
+  }
+}
+
+.xxsHide {
+  @include for-xxs-down {
+    display: none !important;
+  }
+}
