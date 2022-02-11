@@ -1,5 +1,5 @@
-@import "sizes";
-@import "extends";
+@import "./sizes.scss";
+@import "./extends.scss";
 
 %set-max-height {
   flex: 1 1 100%;
