@@ -8,6 +8,8 @@
   --yellow-color: #FFC70D;
   --orange-color: #DC6900;
   --blue-color: #E8FBFF;
+  --lilac-color: #A9BCFF;
+  --dark-color: #000000;
 
   @include for-md-down {
     --page-content-padding: 24px;

@@ -34,7 +34,7 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, 
 
 body {
   overflow-x: hidden;
-  color: #000;
+  color: var(--dark-color);
 }
 
 #__nuxt, #__layout {
@@ -121,5 +121,5 @@ nav ul {
 }
 
 ::selection {
-  background-color: #FFC70D;
+  background-color: var(--lilac-color);
 }

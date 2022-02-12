@@ -1,0 +1,30 @@
+.content-wrapper {
+  padding-top: 28px;
+  padding-bottom: 28px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.info {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 826px;
+
+  .link {
+    color: var(--orange-color);
+    padding: 10px 16px;
+    margin: -10px -16px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.copyright {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px
+}
