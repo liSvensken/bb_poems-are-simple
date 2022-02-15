@@ -11,7 +11,7 @@
   padding-left: var(--page-content-padding);
   padding-right: var(--page-content-padding);
   width: 100%;
-  max-width: 1280px;
+  max-width: 988px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -22,4 +22,62 @@
 
 .gl-layout-content {
   @extend %set-max-height;
+}
+
+.gl-title {
+  font-size: 64px;
+  line-height: 78px;
+  font-weight: bold;
+  color: var(--orange-color);
+  margin-bottom: 52px;
+}
+
+.gl-fox-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-left: 30px;
+}
+
+.gl-fox-info {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.18);
+  border-radius: 8px;
+  padding: 10px 12px;
+  max-width: 156px;
+  min-width: 130px;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+
+  &:before, &:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    transform: translateY(100%);
+  }
+
+  &:before {
+    left: 9px;
+    border: 9px solid transparent;
+    border-top: 11px solid #000000;
+    z-index: 1;
+  }
+
+  &:after {
+    left: 10px;
+    border: 8px solid transparent;
+    border-top: 10px solid #FFFFFF;
+    z-index: 2;
+  }
+}
+
+.gl-fox-info-icon {
+  height: 120px;
+  object-fit: contain;
+  z-index: 2;
 }

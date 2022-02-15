@@ -11,6 +11,7 @@
   font-size: 12px;
   line-height: 16px;
   max-width: 826px;
+  margin-right: 26px;
 
   .link {
     color: var(--orange-color);
@@ -26,5 +27,6 @@
 .copyright {
   font-weight: 300;
   font-size: 14px;
-  line-height: 20px
+  line-height: 20px;
+  flex: 0 0 auto;
 }

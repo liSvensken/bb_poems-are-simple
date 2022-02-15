@@ -14,7 +14,7 @@
   </header>
 </template>
 
-<style>
-@import "./header.scss";
+<style lang="scss" scoped>
 @import "app/styles/global.scss";
+@import "./header.scss";
 </style>

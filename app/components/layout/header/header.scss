@@ -3,6 +3,7 @@
   top: 0;
   background-color: #FFFFFF;
   padding: 20px 0;
+  z-index: var(--z-index-header);
 }
 
 .content-wrapper {
@@ -12,7 +13,7 @@
 }
 
 .logo {
-  height: 54px;
+  height: 50px;
 }
 
 .logo-link {
@@ -33,6 +34,11 @@
   background-repeat: no-repeat;
   background-position: top 50% left 18px;
   background-size: 22px;
+  transition: background-color var(--transition-duration-long);
+
+  &:focus {
+    background-color: var(--orange-color-hover);
+  }
 
   &::placeholder {
     color: grey;

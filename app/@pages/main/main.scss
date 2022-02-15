@@ -1,5 +1,135 @@
-.block {
-  width: 20px;
-  height: 10px;
-  background-color: tomato;
+$step-circle-size: 220px;
+
+.main-info {
+  padding: 90px 0;
+  background-color: var(--blue-color);
+}
+
+.main-info__block {
+  font-size: 24px;
+  line-height: 36px;
+
+  & + & {
+    margin-top: 40px;
+  }
+
+  &.mod-flex {
+    display: flex;
+  }
+}
+
+.main-info__text {
+  max-width: 740px;
+}
+
+.main-info-icon {
+  height: 150px;
+  margin-right: 22px;
+}
+
+.main-info__item-list {
+  padding-left: 26px;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: var(--yellow-color);
+    border: 1px solid var(--dark-color);
+  }
+
+  & + & {
+    margin-top: 16px;
+  }
+}
+
+.steps {
+  padding: 50px 0;
+}
+
+.steps__item-wrapper {
+  & + & {
+    margin-top: 100px;
+  }
+
+  &:nth-child(2n + 1) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+.steps__item {
+  position: relative;
+  padding-left: 180px;
+  min-height: $step-circle-size;
+  max-width: 780px;
+}
+
+.steps__item-number {
+  position: absolute;
+  width: $step-circle-size;
+  height: $step-circle-size;
+  top: -20px;
+  left: 0;
+  opacity: 0.6;
+  border-radius: 100%;
+  font-weight: bold;
+  font-size: 150px;
+  color: #FFFFFF;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.steps__image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+}
+
+.steps__item-title {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 600;
+  color: var(--orange-color);
+  margin-bottom: 14px;
+}
+
+.steps__item-text {
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.links {
+  padding: 70px 0;
+  background-color: var(--blue-color);
+}
+
+.links__content-wrapper {
+  display: flex;
+}
+
+.links__list-wrapper {
+  margin: -8px;
+}
+
+.links__item {
+  display: block;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 24px;
+  color: var(--orange-color);
+  padding: 8px;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

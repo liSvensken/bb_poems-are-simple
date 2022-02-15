@@ -6,10 +6,19 @@
 
   /* colors */
   --yellow-color: #FFC70D;
-  --orange-color: #DC6900;
+  --orange-color: #CA4100;
+  --orange-color-hover: #FFAA6D;
   --blue-color: #E8FBFF;
   --lilac-color: #A9BCFF;
   --dark-color: #000000;
+
+  /* z-index's */
+  --z-index-header: 3;
+
+  /* transition */
+  --transition-duration-short: 250ms;
+  --transition-duration-fast: 400ms;
+  --transition-duration-long: 500ms;
 
   @include for-md-down {
     --page-content-padding: 24px;

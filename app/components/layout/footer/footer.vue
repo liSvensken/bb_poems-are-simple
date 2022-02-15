@@ -10,13 +10,13 @@
     </div>
 
     <div class="copyright">
-      <div>© poemsAreSimple.ru</div>
+      <div>© poemsSimple.ru</div>
       <div>Казань, 2021г</div>
     </div>
   </footer>
 </template>
 
-<style lang="scss">
-@import "./footer.scss";
+<style lang="scss" scoped>
 @import "app/styles/global.scss";
+@import "./footer.scss";
 </style>

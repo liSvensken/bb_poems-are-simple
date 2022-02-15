@@ -5,6 +5,7 @@
       <Nuxt/>
     </main>
     <Footer/>
+    <BookmarksBar/>
   </div>
 </template>
 
@@ -12,11 +13,13 @@
 import { Component, Vue } from "nuxt-property-decorator";
 import Header from "~/app/components/layout/header/header.vue";
 import Footer from "~/app/components/layout/footer/footer.vue";
+import BookmarksBar from "~/app/components/bookmarks-bar/bookmarks-bar.vue";
 
 @Component({
   components: {
     Header,
-    Footer
+    Footer,
+    BookmarksBar
   }
 })
 
