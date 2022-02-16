@@ -1,3 +1,8 @@
+<style lang="scss" scoped>
+@import "app/styles/global.scss";
+@import "./header.scss";
+</style>
+
 <template>
   <header class="container">
     <div class="gl-page-content">
@@ -13,8 +18,3 @@
     </div>
   </header>
 </template>
-
-<style lang="scss" scoped>
-@import "app/styles/global.scss";
-@import "./header.scss";
-</style>

@@ -1,19 +1,3 @@
-<template>
-  <div class="container">
-    <ul class="bookmarks-list">
-      <li
-        v-for="(bookmark, index) in testList"
-        :key="index"
-        class="bookmarks-item-wrapper"
-      >
-        <a :href="bookmark.url" class="bookmarks-item">
-          {{ bookmark.text }}
-        </a>
-      </li>
-    </ul>
-  </div>
-</template>
-
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
 
@@ -65,3 +49,19 @@ export default class extends Vue {
 <style lang="scss" scoped>
 @import 'bookmarks-bar';
 </style>
+
+<template>
+  <div class="container">
+    <ul class="bookmarks-list">
+      <li
+        v-for="(bookmark, index) in testList"
+        :key="index"
+        class="bookmarks-item-wrapper"
+      >
+        <a :href="bookmark.url" class="bookmarks-item">
+          {{ bookmark.text }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</template>

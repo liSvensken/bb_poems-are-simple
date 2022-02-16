@@ -1,3 +1,8 @@
+<style lang="scss" scoped>
+@import "app/styles/global.scss";
+@import "./footer.scss";
+</style>
+
 <template>
   <footer class="content-wrapper gl-page-content">
     <div class="info">
@@ -15,8 +20,3 @@
     </div>
   </footer>
 </template>
-
-<style lang="scss" scoped>
-@import "app/styles/global.scss";
-@import "./footer.scss";
-</style>

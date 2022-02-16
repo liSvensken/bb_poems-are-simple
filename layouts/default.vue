@@ -1,14 +1,3 @@
-<template>
-  <div class="gl-layout-wrapper">
-    <Header/>
-    <main class="gl-layout-content">
-      <Nuxt/>
-    </main>
-    <Footer/>
-    <BookmarksBar/>
-  </div>
-</template>
-
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
 import Header from "~/app/components/layout/header/header.vue";
@@ -30,3 +19,14 @@ export default class extends Vue {
 <style lang="scss">
 @import "app/styles/global.scss";
 </style>
+
+<template>
+  <div class="gl-layout-wrapper">
+    <Header/>
+    <main class="gl-layout-content">
+      <Nuxt/>
+    </main>
+    <Footer/>
+    <BookmarksBar/>
+  </div>
+</template>
