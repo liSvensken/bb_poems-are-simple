@@ -2,8 +2,8 @@ import { PoemInterface } from "~/app/interfaces/api/poem.interface";
 
 export const randomList: PoemInterface[] = [
   {
-    name: "Когда рыжеволосый Самозванец…",
-    author: {
+    poemName: "Когда рыжеволосый Самозванец…",
+    authorName: {
       firstName: "Цветаева",
       name: "Марина",
       patronymic: "Ивановна"
@@ -11,8 +11,8 @@ export const randomList: PoemInterface[] = [
     pageUrl: "/"
   },
   {
-    name: "И снова давние картины…",
-    author: {
+    poemName: "И снова давние картины…",
+    authorName: {
       firstName: "Брюсов",
       name: "Валерий",
       patronymic: "Яковлевич"
@@ -20,8 +20,8 @@ export const randomList: PoemInterface[] = [
     pageUrl: "/"
   },
   {
-    name: "На сухой осине серая ворона…",
-    author: {
+    poemName: "На сухой осине серая ворона…",
+    authorName: {
       firstName: "Брюсов",
       name: "Валерий",
       patronymic: "Яковлевич"
@@ -29,8 +29,8 @@ export const randomList: PoemInterface[] = [
     pageUrl: "/"
   },
   {
-    name: "Нет тебе на свете равных…",
-    author: {
+    poemName: "Нет тебе на свете равных…",
+    authorName: {
       firstName: "Брюсов",
       name: "Валерий",
       patronymic: "Яковлевич"
@@ -38,8 +38,8 @@ export const randomList: PoemInterface[] = [
     pageUrl: "/"
   },
   {
-    name: "Зимний путь",
-    author: {
+    poemName: "Зимний путь",
+    authorName: {
       firstName: "Полонский",
       name: "Яков",
       patronymic: "Петрович"

@@ -37,7 +37,7 @@ export default class extends Vue {
 <template>
   <div class="top-wrapper">
     <div class="gl-page-content">
-      <BreadCrumbs :breadCrumbsList="breadCrumbsList"/>
+      <BreadCrumbs :breadCrumbsListProp="breadCrumbsList"/>
       <ByAuthors/>
     </div>
   </div>

@@ -8,7 +8,7 @@
     <div class="gl-page-content">
       <div class="content-wrapper">
         <nuxt-link to="/" class="logo-link">
-          <img v-lazy-load src="icons/header/logo.svg" alt="logo" class="logo">
+          <img src="icons/header/logo.svg" alt="logo" class="logo">
         </nuxt-link>
 
         <label class="input-search-wrapper">

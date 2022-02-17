@@ -7,7 +7,7 @@ import { BreadCrumbInterface } from "~/app/interfaces/bread-crumb.interface";
 })
 
 export default class extends Vue {
-  @Prop() breadCrumbsList!: BreadCrumbInterface[];
+  @Prop() breadCrumbsListProp!: BreadCrumbInterface[];
 
   mounted() {
   }
@@ -21,7 +21,7 @@ export default class extends Vue {
 <template>
   <ul class="container">
     <li
-      v-for="(crumbItem, index) in breadCrumbsList"
+      v-for="(crumbItem, index) in breadCrumbsListProp"
       :key="index"
       class="item-wrapper"
     >

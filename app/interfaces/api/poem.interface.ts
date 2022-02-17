@@ -1,9 +1,7 @@
+import { AuthorNameInterface } from "~/app/interfaces/api/author-name.interface";
+
 export interface PoemInterface {
-  name: string;
-  author: {
-    firstName: string,
-    name: string,
-    patronymic: string
-  };
-  pageUrl: string
+  poemName: string;
+  authorName: AuthorNameInterface;
+  pageUrl: string;
 }
