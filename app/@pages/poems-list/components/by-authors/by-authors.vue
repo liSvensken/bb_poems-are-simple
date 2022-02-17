@@ -42,15 +42,31 @@ export default class extends Vue {
         :isOpenProp="statesOpen[index]"
         :index="index"
         @onOpen="onOpen"
+        class="accordion-wrapper"
+        :class="{'mod-open': statesOpen[index]}"
       >
         <template v-slot:AccordionSummary>
-          {{ authorItem.authorName.firstName }}
+          <div class="summary-wrapper">
+            {{ authorItem.authorName.firstName }}
+            {{ authorItem.authorName.name }}
+            {{ authorItem.authorName.patronymic }}
+          </div>
         </template>
 
         <template v-slot:AccordionDetails>
-          <div v-for="(poemItem, index) in authorItem.poemsList" :key="index">
-            {{ poemItem.poemName }}
-          </div>
+          <ul class="details-list">
+            <li
+              v-for="(poemItem, index) in authorItem.poemsList"
+              :key="index"
+            >
+              <a
+                :href="poemItem.url"
+                class="details-item"
+              >
+                «{{ poemItem.poemName }}»
+              </a>
+            </li>
+          </ul>
         </template>
       </Accordion>
     </div>

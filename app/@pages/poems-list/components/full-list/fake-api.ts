@@ -1,6 +1,6 @@
 import { PoemInterface } from "~/app/interfaces/api/poem.interface";
 
-export const randomList: PoemInterface[] = [
+export const poemsList: PoemInterface[] = [
   {
     poemName: "Когда рыжеволосый Самозванец…",
     authorName: {

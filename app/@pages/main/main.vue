@@ -123,7 +123,7 @@ export default class extends Vue {
               v-for="(poemItem, index) in randomList"
               :key="index"
               class="links__item-wrapper">
-              <a :href="poemItem.pageUrl" class="links__item">
+              <a :href="poemItem.url" class="links__item">
                 «{{ poemItem.poemName }}» —
                 {{ poemItem.authorName.firstName }}
                 <span v-if="poemItem.authorName.name">{{ poemItem.authorName.name }}.</span>

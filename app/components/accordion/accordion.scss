@@ -1,32 +1,10 @@
-.container {
-
-}
-
 .summary {
-  &.mod-open {
-    .summary-icon {
-      transform: rotate(-180deg);
-    }
-  }
+  display: block;
+  width: 100%;
+  text-align: left;
 }
 
 .details-wrapper {max-height: 0;
   overflow: hidden;
   transition: max-height 400ms;
-
-  &.mod-open {
-    //max-height: ??; // высчитывается через js
-    pointer-events: auto;
-  }
-
-  &:not(.mod-open) {
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
-.details-content {
-  padding-bottom: 2rem;
 }
