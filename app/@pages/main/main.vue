@@ -124,7 +124,7 @@ export default class extends Vue {
               :key="index"
               class="links__item-wrapper">
               <a :href="poemItem.url" class="links__item">
-                «{{ poemItem.poemName }}» —
+                {{ `«${ poemItem.poemName }» —` }}
                 {{ poemItem.authorName.firstName }}
                 <span v-if="poemItem.authorName.name">{{ poemItem.authorName.name }}.</span>
                 <span v-if="poemItem.authorName.patronymic">{{ poemItem.authorName.patronymic }}.</span>

@@ -1,0 +1,19 @@
+.container {
+  padding: 50px 0;
+}
+
+.poems-list {
+  margin: -4px;
+}
+
+.poem-item {
+  display: block;
+  font-size: 20px;
+  line-height: 32px;
+  color: var(--orange-color);
+  padding: 4px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -27,15 +27,14 @@ export default class extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import "app/styles/global.scss";
 @import 'by-authors';
 </style>
 
 <template>
   <div class="container">
-    <h1 class="gl-subtitle">
+    <h2 class="gl-subtitle">
       По авторам:
-    </h1>
+    </h2>
 
     <div v-for="(authorItem, index) in authorPoemsListResponse" :key="index">
       <Accordion

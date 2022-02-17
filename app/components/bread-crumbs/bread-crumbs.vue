@@ -19,15 +19,17 @@ export default class extends Vue {
 </style>
 
 <template>
-  <ul class="container">
-    <li
-      v-for="(crumbItem, index) in breadCrumbsListProp"
-      :key="index"
-      class="item-wrapper"
-    >
-      <a :href="crumbItem.url" class="item">
-        {{ crumbItem.text }}
-      </a>
-    </li>
-  </ul>
+  <div class="gl-page-content">
+    <ul class="container">
+      <li
+        v-for="(crumbItem, index) in breadCrumbsListProp"
+        :key="index"
+        class="item-wrapper"
+      >
+        <a :href="crumbItem.url" class="item">
+          {{ crumbItem.text }}
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>

@@ -1,7 +1,8 @@
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
-import ByAuthors from "./components/by-authors/by-authors.vue";
 import BreadCrumbs from "~/app/components/bread-crumbs/bread-crumbs.vue";
+import ByAuthors from "./components/by-authors/by-authors.vue";
+import FullList from "./components/full-list/full-list.vue";
 import { BreadCrumbInterface } from "~/app/interfaces/bread-crumb.interface";
 
 const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
@@ -18,7 +19,8 @@ const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
 @Component({
   components: {
     BreadCrumbs,
-    ByAuthors
+    ByAuthors,
+    FullList
   }
 })
 
@@ -35,10 +37,14 @@ export default class extends Vue {
 </style>
 
 <template>
-  <div class="top-wrapper">
-    <div class="gl-page-content">
+  <div>
+    <div class="top-wrapper">
       <BreadCrumbs :breadCrumbsListProp="breadCrumbsList"/>
-      <ByAuthors/>
+      <div class="gl-page-content">
+        <ByAuthors/>
+      </div>
     </div>
+
+    <FullList/>
   </div>
 </template>
