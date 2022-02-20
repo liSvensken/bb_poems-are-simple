@@ -9,35 +9,35 @@ export default class extends Vue {
   testList = [
     {
       text: "5 класс",
-      url: "/"
+      url: "5"
     },
     {
       text: "6 класс",
-      url: "/"
+      url: "6"
     },
     {
       text: "7 класс",
-      url: "/"
+      url: "7"
     },
     {
       text: "8 класс",
-      url: "/"
+      url: "8"
     },
     {
       text: "9 класс",
-      url: "/"
+      url: "9"
     },
     {
       text: "10 класс",
-      url: "/"
+      url: "10"
     },
     {
       text: "11 класс",
-      url: "/"
+      url: "11"
     },
     {
       text: "Все классы",
-      url: "/"
+      url: "all"
     }
   ]
 
@@ -58,9 +58,9 @@ export default class extends Vue {
         :key="index"
         class="bookmarks-item-wrapper"
       >
-        <a :href="bookmark.url" class="bookmarks-item">
+        <router-link :to="`/poems-list?grade=${bookmark.url}`" class="bookmarks-item">
           {{ bookmark.text }}
-        </a>
+        </router-link>
       </li>
     </ul>
   </div>
