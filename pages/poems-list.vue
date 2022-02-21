@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
-import PoemsList from "~/app/@pages/poems-list/poems-list.vue";
+import PoemsList from "~/@pages/poems-list/poems-list.vue";
 
 @Component({
   components: {

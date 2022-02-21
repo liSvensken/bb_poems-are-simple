@@ -1,6 +1,6 @@
 <style lang="scss" scoped>
-@import "app/styles/global.scss";
-@import "./footer.scss";
+@import "styles/global";
+@import "footer";
 </style>
 
 <template>

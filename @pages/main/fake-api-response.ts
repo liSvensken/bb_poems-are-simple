@@ -1,4 +1,4 @@
-import { PoemInterface } from '~/app/interfaces/api/poem.interface';
+import { PoemInterface } from '~/interfaces/api/poem.interface';
 
 export const randomList: PoemInterface[] = [
   {

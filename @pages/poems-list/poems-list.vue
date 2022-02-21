@@ -1,10 +1,10 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import BreadCrumbs from '~/app/components/bread-crumbs/bread-crumbs.vue';
+import BreadCrumbs from '~/components/bread-crumbs/bread-crumbs.vue';
 import ByAuthors from './components/by-authors/by-authors.vue';
 import FullList from './components/full-list/full-list.vue';
-import { BreadCrumbInterface } from '~/app/interfaces/bread-crumb.interface';
-import { BOOKMARKS_LIST } from "~/app/utils/const/bookmaks";
+import { BreadCrumbInterface } from '~/interfaces/bread-crumb.interface';
+import { BOOKMARKS_LIST } from "~/utils/const/bookmaks";
 
 const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
   {

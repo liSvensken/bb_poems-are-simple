@@ -1,4 +1,4 @@
-import { AuthorPoemsListInterface } from '~/app/interfaces/api/author-poems-list.interface';
+import { AuthorPoemsListInterface } from '~/interfaces/api/author-poems-list.interface';
 
 export const authorPoemsListResponse: AuthorPoemsListInterface[] = [
   {

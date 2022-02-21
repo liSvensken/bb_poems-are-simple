@@ -1,6 +1,6 @@
 <style lang="scss" scoped>
-@import 'app/styles/global.scss';
-@import './header.scss';
+@import 'styles/global';
+@import 'header';
 </style>
 
 <template>

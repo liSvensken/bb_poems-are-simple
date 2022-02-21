@@ -1,6 +1,6 @@
 <script lang="ts">
 import { Component, Vue, Prop } from "nuxt-property-decorator";
-import { BreadCrumbInterface } from "~/app/interfaces/bread-crumb.interface";
+import { BreadCrumbInterface } from "~/interfaces/bread-crumb.interface";
 
 @Component({
   components: {}

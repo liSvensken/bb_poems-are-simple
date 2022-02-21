@@ -1,6 +1,6 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import { poemsList } from '~/app/@pages/poems-list/components/full-list/fake-api';
+import { poemsList } from '~/@pages/poems-list/components/full-list/fake-api';
 
 @Component({
   components: {}

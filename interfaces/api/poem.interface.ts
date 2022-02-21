@@ -1,4 +1,4 @@
-import { AuthorNameInterface } from "~/app/interfaces/api/author-name.interface";
+import { AuthorNameInterface } from "~/interfaces/api/author-name.interface";
 
 export interface PoemInterface {
   poemName: string;

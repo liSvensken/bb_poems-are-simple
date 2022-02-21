@@ -1,8 +1,8 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import { randomList } from '~/app/@pages/main/fake-api-response';
+import { randomList } from '~/@pages/main/fake-api-response';
 import { BookmarkInterface } from "~/store/bookmarks";
-import { BOOKMARKS_LIST } from "~/app/utils/const/bookmaks";
+import { BOOKMARKS_LIST } from "~/utils/const/bookmaks";
 
 const STEPS_LIST = [
   {
@@ -54,7 +54,7 @@ export default class extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import 'app/styles/global';
+@import 'styles/global';
 @import 'main';
 </style>
 
