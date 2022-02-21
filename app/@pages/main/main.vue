@@ -1,37 +1,39 @@
 <script lang="ts">
-import { Component, Vue } from "nuxt-property-decorator";
-import { randomList } from "~/app/@pages/main/fake-api-response";
+import { Component, Vue } from 'nuxt-property-decorator';
+import { randomList } from '~/app/@pages/main/fake-api-response';
+import { BookmarkInterface } from "~/store/bookmarks";
+import { BOOKMARKS_LIST } from "~/app/utils/const/bookmaks";
 
 const STEPS_LIST = [
   {
-    title: "Посмотри видео с вариантом прочтения",
-    text: "Так ты задействуешь зрительную память, визуализируешь образ стихотворения и узнаешь, с какой интонацией и настроением нужно читать это стихотворение.",
-    image: "icons/main-page/step-1.svg",
-    numberBackgroundColor: "#FFD2A9"
+    title: 'Посмотри видео с вариантом прочтения',
+    text: 'Так ты задействуешь зрительную память, визуализируешь образ стихотворения и узнаешь, с какой интонацией и настроением нужно читать это стихотворение.',
+    image: 'icons/main-page/step-1.svg',
+    numberBackgroundColor: '#FFD2A9'
   },
   {
-    title: "Прочитай краткую историю об этом стихотворении",
-    text: "Понимая, о чём автор говорит в стихотворении, ты сможешь перенести это на свой жизненный опыт. Так ты будешь РАССКАЗЫВАТЬ стих, а не пересказывать непонятный текст.",
-    image: "icons/main-page/step-2.svg",
-    numberBackgroundColor: "#FFA9A9"
+    title: 'Прочитай краткую историю об этом стихотворении',
+    text: 'Понимая, о чём автор говорит в стихотворении, ты сможешь перенести это на свой жизненный опыт. Так ты будешь РАССКАЗЫВАТЬ стих, а не пересказывать непонятный текст.',
+    image: 'icons/main-page/step-2.svg',
+    numberBackgroundColor: '#FFA9A9'
   },
   {
-    title: "Посмотри значение устаревших слов и метафор прямо в тексте стихотворения",
-    text: "Слова, которые знаешь, проще запомнить, чем те, которые звучат, как заклинание на Парселтанге (англ. “Parseltongue”— магический язык змей). Не так ли?)",
-    image: "icons/main-page/step-3.svg",
-    numberBackgroundColor: "#A9BCFF"
+    title: 'Посмотри значение устаревших слов и метафор прямо в тексте стихотворения',
+    text: 'Слова, которые знаешь, проще запомнить, чем те, которые звучат, как заклинание на Парселтанге (англ. “Parseltongue”— магический язык змей). Не так ли?)',
+    image: 'icons/main-page/step-3.svg',
+    numberBackgroundColor: '#A9BCFF'
   },
   {
-    title: "Скачай аудио-запись на телефон и слушай, когда удобно",
-    text: "Вспомни, сколько песен ты знаешь наизусть? А сколько из них ты специально учил?) Слушай стих пока идешь домой, занимаешься рутинной работой, и даже перед сном. Прослушав стихотворение",
-    image: "icons/main-page/step-4.svg",
-    numberBackgroundColor: "#A9FFBC"
+    title: 'Скачай аудио-запись на телефон и слушай, когда удобно',
+    text: 'Вспомни, сколько песен ты знаешь наизусть? А сколько из них ты специально учил?) Слушай стих пока идешь домой, занимаешься рутинной работой, и даже перед сном. Прослушав стихотворение',
+    image: 'icons/main-page/step-4.svg',
+    numberBackgroundColor: '#A9FFBC'
   },
   {
-    title: "Устроим стихо-караоке? Читай стих, а «суфлёр», если что, тебе подскажет",
-    text: "Внизу страницы есть видео с текстом. Если у тебя визуальная память, то этот способ как раз для тебя! Сначала прочитай вместе с суфлёром, а пототом с каждым разом подглядывай всё меньше",
-    image: "icons/main-page/step-5.svg",
-    numberBackgroundColor: "#E9A9FF"
+    title: 'Устроим стихо-караоке? Читай стих, а «суфлёр», если что, тебе подскажет',
+    text: 'Внизу страницы есть видео с текстом. Если у тебя визуальная память, то этот способ как раз для тебя! Сначала прочитай вместе с суфлёром, а пототом с каждым разом подглядывай всё меньше',
+    image: 'icons/main-page/step-5.svg',
+    numberBackgroundColor: '#E9A9FF'
   }
 ]
 
@@ -43,6 +45,10 @@ export default class extends Vue {
   randomList = randomList;
 
   mounted() {
+    this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST })
+  }
+
+  updated() {
   }
 }
 </script>

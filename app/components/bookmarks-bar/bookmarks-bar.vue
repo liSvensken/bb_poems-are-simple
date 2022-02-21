@@ -1,47 +1,16 @@
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
+import { BookmarkInterface } from "~/store/bookmarks";
 
 @Component({
   components: {}
 })
 
 export default class extends Vue {
-  testList = [
-    {
-      text: "5 класс",
-      url: "5"
-    },
-    {
-      text: "6 класс",
-      url: "6"
-    },
-    {
-      text: "7 класс",
-      url: "7"
-    },
-    {
-      text: "8 класс",
-      url: "8"
-    },
-    {
-      text: "9 класс",
-      url: "9"
-    },
-    {
-      text: "10 класс",
-      url: "10"
-    },
-    {
-      text: "11 класс",
-      url: "11"
-    },
-    {
-      text: "Все классы",
-      url: "all"
-    }
-  ]
+  bookmarksList: BookmarkInterface[] = [];
 
   mounted() {
+    this.bookmarksList = this.$store.getters['bookmarks/getList'];
   }
 }
 </script>
@@ -51,10 +20,10 @@ export default class extends Vue {
 </style>
 
 <template>
-  <div class="container">
+  <div v-if="$store.getters['bookmarks/getList']" class="container">
     <ul class="bookmarks-list">
       <li
-        v-for="(bookmark, index) in testList"
+        v-for="(bookmark, index) in $store.getters['bookmarks/getList']"
         :key="index"
         class="bookmarks-item-wrapper"
       >

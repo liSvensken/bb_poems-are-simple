@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Component, Prop, Vue } from "nuxt-property-decorator";
+import { Component, Vue } from "nuxt-property-decorator";
 import Header from "~/app/components/layout/header/header.vue";
 import Footer from "~/app/components/layout/footer/footer.vue";
 import BookmarksBar from "~/app/components/bookmarks-bar/bookmarks-bar.vue";
@@ -13,8 +13,7 @@ import BookmarksBar from "~/app/components/bookmarks-bar/bookmarks-bar.vue";
 })
 
 export default class extends Vue {
-
-}
+};
 </script>
 
 <style lang="scss">

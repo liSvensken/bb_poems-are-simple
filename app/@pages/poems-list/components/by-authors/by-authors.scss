@@ -23,13 +23,13 @@ $arrow-size: 28px;
 
   &:before {
     position: absolute;
-    content: "";
+    content: '';
     top: 50%;
     right: 20px;
     transform: translateY(-50%) rotate(0);
     width: $arrow-size;
     height: $arrow-size;
-    background-image: url("static/icons/arrow.svg");
+    background-image: url('static/icons/arrow.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

@@ -1,5 +1,5 @@
-@import "./sizes.scss";
-@import "./extends.scss";
+@import './sizes.scss';
+@import './extends.scss';
 
 %set-max-height {
   flex: 1 1 100%;
@@ -64,7 +64,7 @@
 
   &:before, &:after {
     position: absolute;
-    content: "";
+    content: '';
     bottom: 0;
     transform: translateY(100%);
   }

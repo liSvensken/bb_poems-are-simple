@@ -1,7 +1,7 @@
 <script lang="ts">
-import { Component, Vue } from "nuxt-property-decorator";
-import Accordion from "~/app/components/accordion/accordion.vue";
-import { authorPoemsListResponse } from "~/app/@pages/poems-list/components/by-authors/fake-api";
+import { Component, Vue } from 'nuxt-property-decorator';
+import Accordion from '~/app/components/accordion/accordion.vue';
+import { authorPoemsListResponse } from '~/app/@pages/poems-list/components/by-authors/fake-api';
 
 @Component({
   components: {
