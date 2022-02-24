@@ -1,7 +1,3 @@
-<template>
-  <PoemsList/>
-</template>
-
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
 import PoemsList from "~/@pages/poems-list/poems-list.vue";
@@ -14,3 +10,7 @@ import PoemsList from "~/@pages/poems-list/poems-list.vue";
 
 export default class extends Vue {}
 </script>
+
+<template>
+  <PoemsList/>
+</template>

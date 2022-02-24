@@ -1,17 +1,17 @@
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
-import Main from "~/@pages/main/main.vue";
+import Poem from "~/@pages/poem/poem.vue";
 
 @Component({
   components: {
-    Main
+    Poem
   }
 })
 
-export default class extends Vue {}
+export default class extends Vue {
+}
 </script>
 
 <template>
-  <Main/>
+  <Poem/>
 </template>
-
