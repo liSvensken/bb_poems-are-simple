@@ -12,6 +12,10 @@ export default class extends Vue {
   mounted() {
     this.bookmarksList = this.$store.getters['bookmarks/getList'];
   }
+
+  getLink(value: number | null) {
+    return value ? `/poems-list?grade=${ value }` : "/poems-list";
+  }
 }
 </script>
 
@@ -27,7 +31,7 @@ export default class extends Vue {
         :key="index"
         class="bookmarks-item-wrapper"
       >
-        <router-link :to="`/poems-list?grade=${bookmark.url}`" class="bookmarks-item">
+        <router-link :to="getLink(bookmark.value)" class="bookmarks-item">
           {{ bookmark.text }}
         </router-link>
       </li>

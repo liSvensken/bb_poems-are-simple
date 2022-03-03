@@ -12,7 +12,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'stylesheet', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
       { src: 'https://polyfill.io/v3/polyfill.min.js?features=es6', body: true, defer: true }

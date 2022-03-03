@@ -1,6 +1,6 @@
 export interface BookmarkInterface {
   text: string,
-  url: string
+  value: number | null
 }
 
 // $store.state.bookmarks.list

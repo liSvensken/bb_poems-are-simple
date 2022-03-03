@@ -26,11 +26,22 @@ const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
 
 export default class extends Vue {
   breadCrumbsList = BREAD_CRUMBS_LIST;
+  currentGrade: number | null = null;
 
-  mounted() {
+  created() {
     this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST })
-  }
+    this.currentGrade = this.$route.query.grade ? +this.$route.query.grade : null;
 
+    this.$watch(
+      () => this.$route.query.grade,
+      (newGrade) => {
+        this.currentGrade = newGrade ? +newGrade : null;
+        console.log("Класс:", this.currentGrade);
+      }
+    )
+
+    console.log("Класс:", this.currentGrade);
+  }
 }
 </script>
 
