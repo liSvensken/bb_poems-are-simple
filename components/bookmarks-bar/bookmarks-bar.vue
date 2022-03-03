@@ -1,6 +1,8 @@
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
 import { BookmarkInterface } from "~/store/bookmarks";
+import { RouterParamsEnum } from "~/enums/routerParams.enum";
+import { RouterQueryParamsEnum } from "~/enums/routerQueryParams.enum";
 
 @Component({
   components: {}
@@ -14,7 +16,7 @@ export default class extends Vue {
   }
 
   getLink(value: number | null) {
-    return value ? `/poems-list?grade=${ value }` : "/poems-list";
+    return value ? `/${ RouterParamsEnum.PoemsList }?${ RouterQueryParamsEnum.Grade }=${ value }` : RouterParamsEnum.PoemsList;
   }
 }
 </script>
@@ -31,7 +33,10 @@ export default class extends Vue {
         :key="index"
         class="bookmarks-item-wrapper"
       >
-        <router-link :to="getLink(bookmark.value)" class="bookmarks-item">
+        <router-link
+          :to="getLink(bookmark.value)"
+          class="bookmarks-item"
+        >
           {{ bookmark.text }}
         </router-link>
       </li>

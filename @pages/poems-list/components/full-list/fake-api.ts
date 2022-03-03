@@ -8,7 +8,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Марина',
       patronymic: 'Ивановна'
     },
-    url: '/'
+    urlParam: 'kogda-ryzhevolosyj-samozvanec'
   },
   {
     poemName: 'И снова давние картины…',
@@ -17,7 +17,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'На сухой осине серая ворона…',
@@ -26,7 +26,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'Нет тебе на свете равных…',
@@ -35,7 +35,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'Зимний путь',
@@ -44,7 +44,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Яков',
       patronymic: 'Петрович'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'Когда рыжеволосый Самозванец…',
@@ -53,7 +53,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Марина',
       patronymic: 'Ивановна'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'И снова давние картины…',
@@ -62,7 +62,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'На сухой осине серая ворона…',
@@ -71,7 +71,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'Нет тебе на свете равных…',
@@ -80,7 +80,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'Зимний путь',
@@ -89,7 +89,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Яков',
       patronymic: 'Петрович'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'Когда рыжеволосый Самозванец…',
@@ -98,7 +98,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Марина',
       patronymic: 'Ивановна'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'И снова давние картины…',
@@ -107,7 +107,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'На сухой осине серая ворона…',
@@ -116,7 +116,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'Нет тебе на свете равных…',
@@ -125,7 +125,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'Зимний путь',
@@ -134,7 +134,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Яков',
       patronymic: 'Петрович'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'Когда рыжеволосый Самозванец…',
@@ -143,7 +143,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Марина',
       patronymic: 'Ивановна'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'И снова давние картины…',
@@ -152,7 +152,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'На сухой осине серая ворона…',
@@ -161,7 +161,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'Нет тебе на свете равных…',
@@ -170,7 +170,7 @@ export const poemsList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'Зимний путь',
@@ -179,6 +179,6 @@ export const poemsList: PoemInterface[] = [
       name: 'Яков',
       patronymic: 'Петрович'
     },
-    url: '/'
+    urlParam: '/'
   }
 ]

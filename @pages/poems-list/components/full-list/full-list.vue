@@ -1,6 +1,7 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
 import { poemsList } from '~/@pages/poems-list/components/full-list/fake-api';
+import { RouterParamsEnum } from "~/enums/routerParams.enum";
 
 @Component({
   components: {}
@@ -9,7 +10,8 @@ import { poemsList } from '~/@pages/poems-list/components/full-list/fake-api';
 export default class extends Vue {
   poemsList = poemsList;
 
-  mounted() {
+  getLink(urlParam: string) {
+    return `/${ RouterParamsEnum.Poem }/${ urlParam }`;
   }
 }
 </script>
@@ -30,15 +32,15 @@ export default class extends Vue {
           v-for="(poemItem, index) in poemsList"
           :key="index"
         >
-          <a
-            :href="poemItem.url"
+          <router-link
+            :to="getLink(poemItem.urlParam)"
             class="poem-item"
           >
             {{ `${ index + 1 }. «${ poemItem.poemName }» —` }}
             {{ poemItem.authorName.firstName }}
             <span v-if="poemItem.authorName.name">{{ poemItem.authorName.name }}.</span>
             <span v-if="poemItem.authorName.patronymic">{{ poemItem.authorName.patronymic }}.</span>
-          </a>
+          </router-link>
         </li>
       </ul>
     </div>

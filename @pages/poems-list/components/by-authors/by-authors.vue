@@ -2,6 +2,7 @@
 import { Component, Vue } from 'nuxt-property-decorator';
 import Accordion from '~/components/accordion/accordion.vue';
 import { authorPoemsListResponse } from '~/@pages/poems-list/components/by-authors/fake-api';
+import { RouterParamsEnum } from "~/enums/routerParams.enum";
 
 @Component({
   components: {
@@ -16,7 +17,8 @@ export default class extends Vue {
     .fill(false)
     .map((item, index) => !index);
 
-  mounted() {
+  getLink(urlParam: string) {
+    return `/${ RouterParamsEnum.Poem }/${ urlParam }`;
   }
 
   onOpen(isOpen: boolean, openIndex: number) {
@@ -58,12 +60,12 @@ export default class extends Vue {
               v-for="(poemItem, index) in authorItem.poemsList"
               :key="index"
             >
-              <a
-                :href="poemItem.url"
+              <router-link
+                :to="getLink(poemItem.urlParam)"
                 class="details-item"
               >
                 «{{ poemItem.poemName }}»
-              </a>
+              </router-link>
             </li>
           </ul>
         </template>

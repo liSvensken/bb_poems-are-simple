@@ -8,7 +8,7 @@ export const randomList: PoemInterface[] = [
       name: 'Марина',
       patronymic: 'Ивановна'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'И снова давние картины…',
@@ -17,7 +17,7 @@ export const randomList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'На сухой осине серая ворона…',
@@ -26,7 +26,7 @@ export const randomList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'Нет тебе на свете равных…',
@@ -35,7 +35,7 @@ export const randomList: PoemInterface[] = [
       name: 'Валерий',
       patronymic: 'Яковлевич'
     },
-    url: '/'
+    urlParam: '/'
   },
   {
     poemName: 'Зимний путь',
@@ -44,6 +44,6 @@ export const randomList: PoemInterface[] = [
       name: 'Яков',
       patronymic: 'Петрович'
     },
-    url: '/'
+    urlParam: '/'
   }
 ]

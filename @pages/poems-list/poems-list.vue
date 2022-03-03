@@ -4,6 +4,7 @@ import BreadCrumbs, { BreadCrumbInterface } from '~/components/bread-crumbs/brea
 import ByAuthors from './components/by-authors/by-authors.vue';
 import FullList from './components/full-list/full-list.vue';
 import { BOOKMARKS_LIST } from "~/utils/const/bookmaks";
+import { RouterQueryParamsEnum } from "~/enums/routerQueryParams.enum";
 
 const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
   {
@@ -29,6 +30,7 @@ export default class extends Vue {
   currentGrade: number | null = null;
 
   created() {
+    console.log(this.$route.query[RouterQueryParamsEnum.Grade])
     this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST })
     this.currentGrade = this.$route.query.grade ? +this.$route.query.grade : null;
 

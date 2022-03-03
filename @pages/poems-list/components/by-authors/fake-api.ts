@@ -11,22 +11,22 @@ export const authorPoemsListResponse: AuthorPoemsListInterface[] = [
       {
         poemName: 'Прощай, немытая Россия…',
         authorName: { firstName: 'Ле́рмонтов', name: 'Михаи́л', patronymic: 'Ю́рьевич' },
-        url: '/'
+        urlParam: 'proshchaj-nemytaya-rossiya'
       },
       {
         poemName: 'Выхожу один я на дорогу…',
         authorName: { firstName: 'Ле́рмонтов', name: 'Михаи́л', patronymic: 'Ю́рьевич' },
-        url: '/'
+        urlParam: 'vyhozhu-odin-ya-na-dorogu'
       },
       {
         poemName: 'И скучно и грустно…',
         authorName: { firstName: 'Ле́рмонтов', name: 'Михаи́л', patronymic: 'Ю́рьевич' },
-        url: '/'
+        urlParam: 'i-skuchno-i-grustno'
       },
       {
         poemName: 'Демон',
         authorName: { firstName: 'Ле́рмонтов', name: 'Михаи́л', patronymic: 'Ю́рьевич' },
-        url: '/'
+        urlParam: 'demon'
       }
     ]
   },
@@ -40,12 +40,12 @@ export const authorPoemsListResponse: AuthorPoemsListInterface[] = [
       {
         poemName: 'Она сидела на полу',
         authorName: { firstName: 'Тю́тчев', name: 'Фёдор', patronymic: 'Ива́нович' },
-        url: '/'
+        urlParam: 'ona-sidela-na-polu'
       },
       {
         poemName: 'Зима недаром злится',
         authorName: { firstName: 'Тю́тчев', name: 'Фёдор', patronymic: 'Ива́нович' },
-        url: '/'
+        urlParam: 'zima-nedarom-zlitsya'
       }
     ]
   },
@@ -59,7 +59,7 @@ export const authorPoemsListResponse: AuthorPoemsListInterface[] = [
       {
         poemName: '...',
         authorName: { firstName: '...', name: '...', patronymic: '...' },
-        url: '/'
+        urlParam: '/'
       }
     ]
   },
@@ -73,7 +73,7 @@ export const authorPoemsListResponse: AuthorPoemsListInterface[] = [
       {
         poemName: '...',
         authorName: { firstName: '...', name: '...', patronymic: '...' },
-        url: '/'
+        urlParam: '/'
       }
     ]
   },
@@ -87,7 +87,7 @@ export const authorPoemsListResponse: AuthorPoemsListInterface[] = [
       {
         poemName: '...',
         authorName: { firstName: '...', name: '...', patronymic: '...' },
-        url: '/'
+        urlParam: '/'
       }
     ]
   },
@@ -101,7 +101,7 @@ export const authorPoemsListResponse: AuthorPoemsListInterface[] = [
       {
         poemName: '...',
         authorName: { firstName: '...', name: '...', patronymic: '...' },
-        url: '/'
+        urlParam: '/'
       }
     ]
   },
@@ -115,7 +115,7 @@ export const authorPoemsListResponse: AuthorPoemsListInterface[] = [
       {
         poemName: '...',
         authorName: { firstName: '...', name: '...', patronymic: '...' },
-        url: '/'
+        urlParam: '/'
       }
     ]
   },
@@ -129,7 +129,7 @@ export const authorPoemsListResponse: AuthorPoemsListInterface[] = [
       {
         poemName: '...',
         authorName: { firstName: '...', name: '...', patronymic: '...' },
-        url: '/'
+        urlParam: '/'
       }
     ]
   },
@@ -143,7 +143,7 @@ export const authorPoemsListResponse: AuthorPoemsListInterface[] = [
       {
         poemName: '...',
         authorName: { firstName: '...', name: '...', patronymic: '...' },
-        url: '/'
+        urlParam: '/'
       }
     ]
   },
@@ -157,7 +157,7 @@ export const authorPoemsListResponse: AuthorPoemsListInterface[] = [
       {
         poemName: '...',
         authorName: { firstName: '...', name: '...', patronymic: '...' },
-        url: '/'
+        urlParam: '/'
       }
     ]
   },
@@ -171,7 +171,7 @@ export const authorPoemsListResponse: AuthorPoemsListInterface[] = [
       {
         poemName: '...',
         authorName: { firstName: '...', name: '...', patronymic: '...' },
-        url: '/'
+        urlParam: '/'
       }
     ]
   }
