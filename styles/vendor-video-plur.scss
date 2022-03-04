@@ -1,0 +1,69 @@
+.plyr {
+  .plyr__video-wrapper {
+    margin: 0;
+  }
+
+  // панель инструментов в нач.состоянии
+  &.plyr--stopped {
+    .plyr__controls {
+      opacity: 0;
+    }
+  }
+
+  // инструменты на панели
+  .plyr__control {
+    &:hover {
+      background-color: #CA4100;
+    }
+  }
+
+  // центральная кнопка play
+  .plyr__control--overlaid {
+    border-radius: 8px;
+    width: 78px;
+    height: 56px;
+    background-color: #FFFFFF;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 26px;
+    left: 26px;
+    transform: translate(0, 0);
+    padding: 0;
+
+    &:hover {
+      background-color: var(--orange-color);
+
+      svg {
+        fill: #FFFFFF;
+      }
+    }
+
+    svg {
+      left: auto;
+      fill: var(--orange-color);
+      width: 30px;
+      height: 34px;
+    }
+  }
+
+  // дорожка звука
+  .plyr__volume {
+    input[type=range] {
+      color: var(--orange-color);
+    }
+  }
+
+  // дорожка видео
+  .plyr__progress {
+    input[type=range] {
+      color: var(--orange-color);
+    }
+  }
+
+  iframe {
+    top: -50% !important;
+    height: 200% !important;
+  }
+}

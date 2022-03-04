@@ -25,6 +25,13 @@ export default class extends Vue {
       url: "/"
     }
   ];
+
+  mounted() {
+    // @ts-ignore
+    // this.$refs.plyrRef.player.on('playing', () => console.log('event fired'))
+    console.log( this.$refs.plyrRef.player.autoplay)
+    this.$refs.plyrRef.player.autoplay = true;
+  }
 }
 </script>
 
@@ -51,13 +58,9 @@ export default class extends Vue {
 
       <div class="gl-page-content">
         <div class="video-wrapper">
-          <iframe
-            width="560" height="315"
-            src="https://www.youtube.com/embed/ODVEBnVqCXA"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          />
+          <vue-plyr ref="plyrRef">
+            <div data-plyr-provider="youtube" data-plyr-embed-id="ODVEBnVqCXA"></div>
+          </vue-plyr>
         </div>
       </div>
     </div>
