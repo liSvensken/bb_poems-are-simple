@@ -19,7 +19,7 @@
 
   // центральная кнопка play
   .plyr__control--overlaid {
-    border-radius: 8px;
+    border-radius: var(--border-radius-normal);
     width: 78px;
     height: 56px;
     background-color: #FFFFFF;

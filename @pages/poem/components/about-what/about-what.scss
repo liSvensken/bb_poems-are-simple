@@ -1,0 +1,35 @@
+.container {
+  margin-bottom: 100px;
+}
+
+.text-container {
+  overflow: hidden;
+  transition: max-height var(--transition-duration-fast);
+
+  &:not(.mod-open) {
+    mask-image: linear-gradient(to top, transparent 0%, #000 38%);
+  }
+}
+
+.text-content {
+
+}
+
+.text {
+  font-size: 16px;
+  line-height: 24px;
+  text-indent: 30px;
+}
+
+.btn-more {
+  padding: 8px;
+  margin: -8px;
+  margin-top: calc(10px - 8px);
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--orange-color);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

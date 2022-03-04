@@ -21,6 +21,9 @@
   --transition-duration-fast: 400ms;
   --transition-duration-long: 500ms;
 
+  /* border-radius */
+  --border-radius-normal: 8px;
+
   @include for-md-down {
     --page-content-padding: 24px;
   }

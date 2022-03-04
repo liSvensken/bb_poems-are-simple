@@ -1,9 +1,15 @@
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
 import BreadCrumbs from "~/components/bread-crumbs/bread-crumbs.vue";
+import AboutWhat from "~/@pages/poem/components/about-what/about-what.vue";
+import PoemText from "~/@pages/poem/components/poem-text/poem-text.vue";
 
 @Component({
-  components: { BreadCrumbs }
+  components: {
+    BreadCrumbs,
+    AboutWhat,
+    PoemText
+  }
 })
 
 export default class extends Vue {
@@ -25,13 +31,6 @@ export default class extends Vue {
       url: "/"
     }
   ];
-
-  mounted() {
-    // @ts-ignore
-    // this.$refs.plyrRef.player.on('playing', () => console.log('event fired'))
-    console.log( this.$refs.plyrRef.player.autoplay)
-    this.$refs.plyrRef.player.autoplay = true;
-  }
 }
 </script>
 
@@ -56,13 +55,49 @@ export default class extends Vue {
         </div>
       </div>
 
-      <div class="gl-page-content">
+    </div>
+
+    <div class="gl-page-content">
+      <div class="video-container">
         <div class="video-wrapper">
-          <vue-plyr ref="plyrRef">
-            <div data-plyr-provider="youtube" data-plyr-embed-id="ODVEBnVqCXA"></div>
+          <vue-plyr>
+            <div
+              data-plyr-provider="youtube"
+              data-plyr-embed-id="ODVEBnVqCXA"
+            />
           </vue-plyr>
         </div>
+
+        <div class="reader-name">
+          Маша Матвейчук
+        </div>
+
+        <div class="social-link-wrapper">
+          <a href="" class="social-link">
+            <img src="/icons/social/youtube.svg" alt="" class="social-link-icon">
+          </a>
+          <a href="" class="social-link">
+            <img src="/icons/social/inst.svg" alt="" class="social-link-icon">
+          </a>
+          <a href="" class="social-link">
+            <img src="/icons/social/vk.svg" alt="" class="social-link-icon">
+          </a>
+          <a href="" class="social-link">
+            <img src="/icons/social/telegram.svg" alt="" class="social-link-icon">
+          </a>
+          <a href="" class="social-link">
+            <img src="/icons/social/tiktok.svg" alt="" class="social-link-icon">
+          </a>
+        </div>
+
+        <a href="" download class="btn-download-audio">
+          Скачать аудио
+        </a>
       </div>
+
+      <AboutWhat/>
+
+      <PoemText/>
     </div>
   </div>
 </template>

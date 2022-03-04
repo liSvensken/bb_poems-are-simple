@@ -38,7 +38,7 @@ export default class extends Vue {
       ref="detailsWrapper"
       class="details-wrapper"
       :class="{ 'mod-open': isOpenProp }"
-      :style="{maxHeight: isOpenProp ? `${detailsMaxHeight}px` : 0}"
+      :style="{ maxHeight: isOpenProp ? `${ detailsMaxHeight }px` : 0 }"
     >
       <div
         class="details-content"

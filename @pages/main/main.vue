@@ -69,7 +69,7 @@ export default class extends Vue {
         </div>
 
         <div class="main-info__block mod-flex">
-          <img src="icons/fox.svg" alt="fox" class="main-info-icon">
+          <img src="/icons/fox.svg" alt="fox" class="main-info-icon">
 
           <ul>
             <li class="main-info__item-list">
@@ -142,7 +142,7 @@ export default class extends Vue {
             <div class="gl-fox-info">
               Что будем учить?
             </div>
-            <img src="icons/fox.svg" alt="fox" class="gl-fox-info-icon">
+            <img src="/icons/fox.svg" alt="fox" class="gl-fox-info-icon">
           </div>
         </div>
       </div>
