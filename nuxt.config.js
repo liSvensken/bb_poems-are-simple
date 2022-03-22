@@ -23,12 +23,14 @@ export default {
   css: [
     '~styles/reset.scss',
     '~styles/fontface.scss',
-    '~styles/vendor-video-plur.scss'
+    '~styles/vendor-video-plur',
+    '~styles/tooltip'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/vue-plyr', mode: 'client' }
+    { src: '~/plugins/vue-plyr', mode: 'client' },
+    { src: '~/plugins/v-tooltip', mode: 'client' }
   ],
 
   // Auto import layout: https://go.nuxtjs.dev/config-components
@@ -41,8 +43,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
+  modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

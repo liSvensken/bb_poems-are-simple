@@ -1,0 +1,39 @@
+.tooltip {
+  z-index: var(--z-index-tooltip);
+
+  .tooltip-inner {
+    background: #FFFFFF;
+    color: #000000;
+    border-radius: var(--border-radius-normal);
+    border: 1px solid #000000;
+    padding: calc(8px - 1px);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.47);
+    font-size: 14px;
+    line-height: 16px;
+    max-width: 350px;
+    pointer-events: auto;
+  }
+
+  .tooltip-arrow {
+    left: 50%;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(calc(100% - 1px));
+
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      transform: translateX(-50%);
+    }
+
+    &:before {
+      border: 7px solid transparent;
+      border-top: 7px solid #000;
+    }
+
+    &:after {
+      border: 6px solid transparent;
+      border-top: 6px solid #FFF;
+    }
+  }
+}

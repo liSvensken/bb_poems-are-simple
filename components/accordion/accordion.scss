@@ -4,7 +4,8 @@
   text-align: left;
 }
 
-.details-wrapper {max-height: 0;
+.details-wrapper {
+  max-height: 0;
   overflow: hidden;
   transition: max-height 400ms;
 }
