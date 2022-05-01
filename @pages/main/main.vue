@@ -1,7 +1,6 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
 import { randomList } from '~/@pages/main/fake-api-response';
-import { BookmarkInterface } from "~/store/bookmarks";
 import { BOOKMARKS_LIST } from "~/utils/const/bookmaks";
 
 const STEPS_LIST = [
@@ -41,14 +40,40 @@ const STEPS_LIST = [
 
 export default class extends Vue {
   stepsList = STEPS_LIST;
+  arr = [1, 2, 3]
 
   randomList = randomList;
 
   mounted() {
     this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST })
+    this.animateAppearance();
   }
 
-  updated() {
+  animateAppearance() {
+    (this.$refs.stepItem as HTMLElement[]).forEach((gsapItem, index) => {
+      this.$gsap.fromTo(
+        gsapItem,
+        {
+          opacity: 0,
+          transform: "translate(0px, -180px) scale(1.6)",
+          y: -20
+        },
+        {
+          opacity: 1,
+          y: 0,
+          transform: "translate(0px, -20px) scale(1)",
+          duration: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: index >= 1 ? (this.$refs.stepItem as HTMLElement[])[index - 1] : gsapItem,
+            start: index >= 1 ? "top center" : "top bottom",
+            end: "bottom center",
+            // markers: true,
+            scrub: true
+          }
+        }
+      );
+    })
   }
 }
 </script>
@@ -95,6 +120,7 @@ export default class extends Vue {
             v-for="(stepItem, index) in stepsList"
             :key="index"
             class="steps__item-wrapper"
+            ref="stepItem"
           >
             <div class="steps__item">
               <div

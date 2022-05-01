@@ -40,7 +40,40 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    'nuxt-gsap-module'
   ],
+
+  gsap: {
+    extraPlugins: {
+      scrollTo: true,
+      scrollTrigger: true
+    },
+    extraEases: {
+      expoScaleEase: true
+    }
+  },
+
+  // // Глобальные переходы между страницами
+  pageTransition: {
+    name: 'page',
+    mode: 'out-in',
+    css: false,
+
+    beforeEnter(el) {
+      this.$gsap.set(el, {
+        opacity: 0
+      })
+    },
+
+    enter(el, done) {
+      this.$gsap.to(el, {
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.inOut',
+        onComplete: done
+      })
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
