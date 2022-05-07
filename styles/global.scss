@@ -38,6 +38,10 @@
   font-weight: bold;
   color: var(--orange-color);
   margin-bottom: 20px;
+
+  .mark {
+    color: var(--orange-color-hover)
+  }
 }
 
 .gl-caption {

@@ -70,7 +70,7 @@ export default class extends Vue {
     <div>
       <div class="container gl-blue-block">
         <div class="gl-page-content">
-          <h2 class="gl-subtitle subtitle">
+          <h2 class="gl-subtitle">
             По авторам
             <span v-if="this.currentGrade">за <span class="mark">{{ this.currentGrade }} класс:</span></span>
           </h2>
