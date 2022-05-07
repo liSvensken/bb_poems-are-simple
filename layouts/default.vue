@@ -27,6 +27,7 @@ export default class extends Vue {
       <Nuxt/>
     </main>
     <Footer/>
+<!--    todo вернуть потом-->
     <BookmarksBar/>
   </div>
 </template>

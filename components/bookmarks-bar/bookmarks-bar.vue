@@ -13,10 +13,19 @@ export default class extends Vue {
 
   mounted() {
     this.bookmarksList = this.$store.getters['bookmarks/getList'];
+
+    this.$watch(
+      () => this.$route.name,
+      () => {
+        setTimeout(() => {
+          this.bookmarksList = this.$store.getters['bookmarks/getList'];
+        })
+      }
+    )
   }
 
   getLink(value: number | null) {
-    return value ? `/${ RouterParamsEnum.PoemsList }?${ RouterQueryParamsEnum.Grade }=${ value }` : RouterParamsEnum.PoemsList;
+    return value ? `/${ RouterParamsEnum.PoemsListByAuthor }?${ RouterQueryParamsEnum.Grade }=${ value }` : RouterParamsEnum.PoemsListByAuthor;
   }
 }
 </script>
@@ -26,10 +35,10 @@ export default class extends Vue {
 </style>
 
 <template>
-  <div v-if="$store.getters['bookmarks/getList']" class="container">
+  <div v-if="this.bookmarksList" class="container">
     <ul class="bookmarks-list">
       <li
-        v-for="(bookmark, index) in $store.getters['bookmarks/getList']"
+        v-for="(bookmark, index) in this.bookmarksList"
         :key="index"
         class="bookmarks-item-wrapper"
       >

@@ -1,0 +1,65 @@
+@import "styles/sizes";
+
+.top-block-wrapper {
+  padding-bottom: 50px;
+}
+
+.bottom-block-wrapper {
+  padding-top: 50px;
+}
+
+.grad-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.input-wrapper {
+  display: block;
+
+  // каждый 3-й, начиная со 2-го
+  &:nth-child(3n + 2) {
+    order: 1;
+  }
+
+  // каждый 3-й, начиная со 3-го
+  &:nth-child(3n  + 3) {
+    order: 2;
+  }
+}
+
+.input {
+  display: none;
+
+  &:checked {
+    + .input-content {
+
+      &:before {
+        background-color: var(--yellow-color);
+      }
+    }
+  }
+}
+
+.input-content {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 34px;
+  position: relative;
+  cursor: pointer;
+  padding: 16px 16px 16px 60px;
+  display: block;
+  white-space: nowrap;
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: #FFFFFF;
+    border: 4px solid var(--yellow-color);
+  }
+}

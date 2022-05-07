@@ -4,6 +4,8 @@
   right: -52px;
   display: flex;
   justify-content: flex-end;
+  margin-right: calc(-1 * (100vw - 100%));
+  background-color: transparent;
 }
 
 .bookmarks-item-wrapper {

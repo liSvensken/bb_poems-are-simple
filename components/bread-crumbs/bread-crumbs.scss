@@ -3,9 +3,13 @@ $padding-left-right: 8px;
 $dot-size: 6px;
 
 .container {
+  padding: calc(24px - #{$padding-top-bottom}) 0;
+  margin: 0 -#{$padding-left-right};
+}
+
+.content-wrapper {
   display: flex;
   flex-wrap: wrap;
-  margin: calc(24px - #{$padding-top-bottom}) -#{$padding-left-right} calc(44px - #{$padding-top-bottom}) -#{$padding-left-right};
 }
 
 .item-wrapper {

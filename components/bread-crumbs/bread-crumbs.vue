@@ -12,9 +12,6 @@ export interface BreadCrumbInterface {
 
 export default class extends Vue {
   @Prop() breadCrumbsListProp!: BreadCrumbInterface[];
-
-  mounted() {
-  }
 }
 </script>
 
@@ -23,17 +20,19 @@ export default class extends Vue {
 </style>
 
 <template>
-  <div class="gl-page-content">
-    <ul class="container">
-      <li
-        v-for="(crumbItem, index) in breadCrumbsListProp"
-        :key="index"
-        class="item-wrapper"
-      >
-        <a :href="crumbItem.url" class="item">
-          {{ crumbItem.text }}
-        </a>
-      </li>
-    </ul>
+  <div class="container gl-blue-block">
+    <div class="gl-page-content">
+      <ul class="content-wrapper">
+        <li
+          v-for="(crumbItem, index) in breadCrumbsListProp"
+          :key="index"
+          class="item-wrapper"
+        >
+          <a :href="crumbItem.url" class="item">
+            {{ crumbItem.text }}
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>

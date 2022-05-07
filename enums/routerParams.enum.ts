@@ -1,4 +1,6 @@
 export enum RouterParamsEnum {
   Poem = 'poem',
-  PoemsList = 'poems-list'
+  PoemsListByAuthor = 'poems-list-by-author',
+  PoemsListByGrade = 'poems-list-by-grade',
+  FullList = 'full-list',
 }
