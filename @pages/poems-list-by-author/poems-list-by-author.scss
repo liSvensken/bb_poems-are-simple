@@ -1,6 +1,10 @@
 $padding-side: 20px;
 $arrow-size: 28px;
 
+.content-container {
+  padding-bottom: 60px;
+}
+
 .accordion-wrapper {
   border-bottom: 1px solid var(--border-color);
 

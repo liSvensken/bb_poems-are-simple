@@ -2,6 +2,7 @@
 import { Component, Vue } from 'nuxt-property-decorator';
 import { randomList } from '~/@pages/main/fake-api-response';
 import { BOOKMARKS_LIST } from "~/utils/const/bookmaks";
+import { RouterParamsEnum } from "~/enums/routerParams.enum";
 
 const STEPS_LIST = [
   {
@@ -45,7 +46,7 @@ export default class extends Vue {
   randomList = randomList;
 
   mounted() {
-    this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST })
+    this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByAuthor })
     this.animateAppearance();
   }
 

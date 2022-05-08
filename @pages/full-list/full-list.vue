@@ -4,6 +4,8 @@ import { poemsList } from "./fake-api";
 import PoemsList from "~/components/poems-list/poems-list.vue";
 import { PoemInterface } from "~/interfaces/api/poem.interface";
 import BreadCrumbs, { BreadCrumbInterface } from '~/components/bread-crumbs/bread-crumbs.vue';
+import { BOOKMARKS_LIST } from "~/utils/const/bookmaks";
+import { RouterParamsEnum } from "~/enums/routerParams.enum";
 
 const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
   {
@@ -26,6 +28,10 @@ const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
 export default class extends Vue {
   poemsList: PoemInterface[] = poemsList;
   breadCrumbsList = BREAD_CRUMBS_LIST;
+
+  mounted() {
+    this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByGrade });
+  }
 }
 </script>
 

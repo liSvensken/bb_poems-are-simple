@@ -1,6 +1,5 @@
 <script lang="ts">
-import { Component, Vue } from "nuxt-property-decorator";
-import { poemResponse } from "~/@pages/poem/components/poem-text/fake-api-response";
+import { Component, Prop, Vue } from "nuxt-property-decorator";
 
 /**
  * v-tooltip - на будущее, когда будет не только оригинальный текст
@@ -11,9 +10,10 @@ import { poemResponse } from "~/@pages/poem/components/poem-text/fake-api-respon
 })
 
 export default class extends Vue {
+  @Prop() poemText!: string;
 
   mounted() {
-    (this.$refs.poemText as HTMLElement).innerHTML = poemResponse.original;
+    (this.$refs.poemText as HTMLElement).innerHTML = this.poemText;
   }
 };
 </script>

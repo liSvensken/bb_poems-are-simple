@@ -37,7 +37,7 @@ export default class extends Vue {
     .map((item, index) => !index);
 
   mounted() {
-    this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST })
+    this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByAuthor });
     this.currentGrade = this.$route.query.grade ? +this.$route.query.grade : null;
 
     this.$watch(
@@ -68,7 +68,7 @@ export default class extends Vue {
   <div>
     <BreadCrumbs :breadCrumbsListProp="breadCrumbsList"/>
     <div>
-      <div class="container gl-blue-block">
+      <div class="content-container gl-blue-block">
         <div class="gl-page-content">
           <h2 class="gl-subtitle">
             По авторам

@@ -10,22 +10,22 @@ import { RouterQueryParamsEnum } from "~/enums/routerQueryParams.enum";
 
 export default class extends Vue {
   bookmarksList: BookmarkInterface[] = [];
+  pageNameLink: RouterParamsEnum | string = "";
+  routerQueryParamsEnum = RouterQueryParamsEnum;
 
   mounted() {
     this.bookmarksList = this.$store.getters['bookmarks/getList'];
+    this.pageNameLink = this.$store.getters['bookmarks/getPageLink'];
 
     this.$watch(
       () => this.$route.name,
       () => {
         setTimeout(() => {
           this.bookmarksList = this.$store.getters['bookmarks/getList'];
+          this.pageNameLink = this.$store.getters['bookmarks/getPageLink'];
         })
       }
     )
-  }
-
-  getLink(value: number | null) {
-    return value ? `/${ RouterParamsEnum.PoemsListByAuthor }?${ RouterQueryParamsEnum.Grade }=${ value }` : RouterParamsEnum.PoemsListByAuthor;
   }
 }
 </script>
@@ -43,7 +43,7 @@ export default class extends Vue {
         class="bookmarks-item-wrapper"
       >
         <router-link
-          :to="getLink(bookmark.value)"
+          :to="bookmark.value ? `/${ pageNameLink }?${ routerQueryParamsEnum.Grade }=${ bookmark.value }` : pageNameLink"
           class="bookmarks-item"
         >
           {{ bookmark.text }}
