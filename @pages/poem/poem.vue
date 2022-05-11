@@ -3,7 +3,7 @@ import { Component, Vue } from "nuxt-property-decorator";
 import BreadCrumbs from "~/components/bread-crumbs/bread-crumbs.vue";
 import AboutWhat from "~/@pages/poem/components/about-what/about-what.vue";
 import PoemText from "~/@pages/poem/components/poem-text/poem-text.vue";
-import { PoemInterface, poemModel, SocialContactsInterface } from "~/@pages/poem/fake-api";
+import { PoemInterface, poemModel } from "~/@pages/poem/fake-api";
 
 @Component({
   components: {

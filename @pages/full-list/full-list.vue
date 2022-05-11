@@ -28,9 +28,18 @@ const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
 export default class extends Vue {
   poemsList: PoemInterface[] = poemsList;
   breadCrumbsList = BREAD_CRUMBS_LIST;
+  fullList: PoemInterface[] = [];
 
   mounted() {
     this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByGrade });
+
+    this.$axios.get(`${ process.env.API_URL }/poems/1`)
+      .then((response: any) => {
+        if (!response.data.err) {
+          this.fullList = response.data.result;
+          console.log(this.fullList)
+        }
+      })
   }
 }
 </script>
@@ -44,7 +53,7 @@ export default class extends Vue {
     <BreadCrumbs :breadCrumbsListProp="breadCrumbsList"/>
     <div class="gl-blue-block">
       <div class="gl-page-content">
-        <PoemsList title="Весь список" :list="this.poemsList"/>
+        <PoemsList title="Весь список" :list="this.fullList"/>
       </div>
     </div>
   </div>

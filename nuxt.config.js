@@ -19,6 +19,10 @@ export default {
     ]
   },
 
+  env: {
+    API_URL: 'http://localhost:7000',
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~styles/reset.scss',
@@ -76,7 +80,13 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    '@nuxtjs/axios'
+  ],
+
+  axios: {
+    // proxy: true
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
