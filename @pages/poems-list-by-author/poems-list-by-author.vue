@@ -27,26 +27,13 @@ const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
 
 export default class extends Vue {
   breadCrumbsList = BREAD_CRUMBS_LIST;
-
-  currentGrade: number | null = null;
-
-  authorPoemsListResponse: AuthorPoemsListInterface[] = authorPoemsListResponse;
-
+  authorPoemsListResponse: AuthorPoemsListInterface[] = [];
   statesOpen = new Array(authorPoemsListResponse.length)
     .fill(false)
     .map((item, index) => !index);
 
   mounted() {
-    this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByAuthor });
-    this.currentGrade = this.$route.query.grade ? +this.$route.query.grade : null;
-
-    this.$watch(
-      () => this.$route.query.grade,
-      (newGrade) => {
-        this.currentGrade = newGrade ? +newGrade : null;
-        console.log("Делаем запрос на новую пачку стихов по классам");
-      }
-    )
+    this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByGrade });
   }
 
   getLink(urlParam: string) {
@@ -72,7 +59,6 @@ export default class extends Vue {
         <div class="gl-page-content">
           <h2 class="gl-subtitle">
             По авторам
-            <span v-if="this.currentGrade">за <span class="mark">{{ this.currentGrade }} класс:</span></span>
           </h2>
 
           <div v-for="(authorItem, index) in authorPoemsListResponse" :key="index">

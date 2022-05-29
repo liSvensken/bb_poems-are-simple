@@ -6,6 +6,8 @@ import PoemsList from "~/components/poems-list/poems-list.vue";
 import { poemsList } from "./fake-api";
 import { BOOKMARKS_LIST } from "~/utils/const/bookmaks";
 import { RouterQueryParamsEnum } from "~/enums/routerQueryParams.enum";
+import { getPoemsList } from "~/@api/get-poems-list";
+import { PoemInterface } from "~/interfaces/api/poem.interface";
 
 const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
   {
@@ -27,7 +29,7 @@ const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
 
 export default class extends Vue {
   bookmarksList: BookmarkInterface[] = BOOKMARKS_LIST;
-  poemsListResponse = poemsList;
+  poemsListResponse: PoemInterface[] = [];
   breadCrumbsList = BREAD_CRUMBS_LIST;
   gradControl: string | null = null;
   picked = 'One';
@@ -36,6 +38,9 @@ export default class extends Vue {
     this.$store.commit('bookmarks/setList', { list: null });
 
     this.gradControl = this.$route.query.grade as string;
+
+    this.updatePoemsByGrad(this.gradControl);
+
     this.$watch(
       () => this.gradControl,
       newGrad => {
@@ -44,9 +49,22 @@ export default class extends Vue {
         } else {
           this.$router.replace({ query: undefined });
         }
-        console.log(`Запрос на получение стихов для ${ newGrad } класса`);
+        if (newGrad) {
+          // Запрос на получение стихов для ${ newGrad } класса
+          this.updatePoemsByGrad(newGrad);
+        }
       }
     )
+  }
+
+  updatePoemsByGrad(grad?: string): void {
+    getPoemsList(100, 0, undefined, Number(grad))
+      .then(response => {
+        this.poemsListResponse = response.data.result;
+      })
+      .catch(err => {
+        console.error(err)
+      })
   }
 }
 </script>

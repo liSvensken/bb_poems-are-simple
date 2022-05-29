@@ -1,12 +1,11 @@
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
-import { poemsList } from "./fake-api";
 import PoemsList from "~/components/poems-list/poems-list.vue";
 import { PoemInterface } from "~/interfaces/api/poem.interface";
 import BreadCrumbs, { BreadCrumbInterface } from '~/components/bread-crumbs/bread-crumbs.vue';
 import { BOOKMARKS_LIST } from "~/utils/const/bookmaks";
 import { RouterParamsEnum } from "~/enums/routerParams.enum";
-import { getPoemsFullList } from "~/@api/get-poems-full-list";
+import { getPoemsList } from "~/@api/get-poems-list";
 
 const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
   {
@@ -33,7 +32,7 @@ export default class extends Vue {
   mounted() {
     this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByGrade });
 
-    getPoemsFullList()
+    getPoemsList(100, 0)
       .then(response => {
         this.fullList = response.data.result;
       })
