@@ -6,6 +6,7 @@ import { PoemInterface } from "~/interfaces/api/poem.interface";
 import BreadCrumbs, { BreadCrumbInterface } from '~/components/bread-crumbs/bread-crumbs.vue';
 import { BOOKMARKS_LIST } from "~/utils/const/bookmaks";
 import { RouterParamsEnum } from "~/enums/routerParams.enum";
+import { getPoemsFullList } from "~/@api/get-poems-full-list";
 
 const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
   {
@@ -26,20 +27,19 @@ const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
 })
 
 export default class extends Vue {
-  poemsList: PoemInterface[] = poemsList;
   breadCrumbsList = BREAD_CRUMBS_LIST;
   fullList: PoemInterface[] = [];
 
   mounted() {
     this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByGrade });
 
-    this.$axios.get(`${ process.env.API_URL }/poems/1`)
-      .then((response: any) => {
-        if (!response.data.err) {
-          this.fullList = response.data.result;
-          console.log(this.fullList)
-        }
+    getPoemsFullList()
+      .then(response => {
+        this.fullList = response.data.result;
       })
+    .catch(err => {
+      console.error(err)
+    })
   }
 }
 </script>

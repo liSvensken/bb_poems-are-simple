@@ -38,8 +38,8 @@ export default class extends Vue {
         >
           {{ `${ index + 1 }. «${ poemItem.poemName }» —` }}
           {{ poemItem.authorName.firstName }}
-          <span v-if="poemItem.authorName.name">{{ poemItem.authorName.name }}.</span>
-          <span v-if="poemItem.authorName.patronymic">{{ poemItem.authorName.patronymic }}.</span>
+          <span v-if="poemItem.authorName.name">{{ poemItem.authorName.name }}</span>
+          <span v-if="poemItem.authorName.patronymic">{{ poemItem.authorName.patronymic }}</span>
         </router-link>
       </li>
     </ul>
