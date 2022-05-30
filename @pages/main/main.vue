@@ -62,6 +62,10 @@ export default class extends Vue {
       })
   }
 
+  getLink(urlParam: string) {
+    return `/${ RouterParamsEnum.Poem }/${ urlParam }`;
+  }
+
   animateAppearance() {
     // (this.$refs.stepItem as HTMLElement[]).forEach((gsapItem, index) => {
     //   this.$gsap.fromTo(
@@ -102,7 +106,7 @@ export default class extends Vue {
       <div class="gl-page-content">
         <div class="main-info__block">
           <p class="main-info__text">
-            Сервис «стихи_просто» - твой гид для быстрого и осмысленного запоминанания стихов из школьной программы.
+            Сервис «стихи_просто» — твой гид для быстрого и осмысленного запоминанания стихов из школьной программы.
           </p>
         </div>
 
@@ -168,12 +172,15 @@ export default class extends Vue {
               v-for="(poemItem, index) in randomList"
               :key="index"
               class="links__item-wrapper">
-              <a :href="poemItem.urlParam" class="links__item">
+              <router-link
+                :to="getLink(poemItem.urlParam)"
+                class="links__item"
+              >
                 {{ `«${ poemItem.poemName }» —` }}
                 {{ poemItem.authorName.firstName }}
                 <span v-if="poemItem.authorName.name">{{ poemItem.authorName.name }}.</span>
                 <span v-if="poemItem.authorName.patronymic">{{ poemItem.authorName.patronymic }}.</span>
-              </a>
+              </router-link>
             </li>
           </ul>
 

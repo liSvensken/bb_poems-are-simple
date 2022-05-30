@@ -34,10 +34,6 @@ export default class extends Vue {
     this.updateAuthorsList();
 
     this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByGrade });
-
-    this.statesOpen = new Array(this.authorPoemsListResponse.length)
-      .fill(false)
-      .map((item, index) => !index);
   }
 
   getLink(urlParam: string) {
@@ -53,6 +49,9 @@ export default class extends Vue {
     getAuthorsList(100, 0)
       .then(response => {
         this.authorPoemsListResponse = response.data.result;
+
+        this.statesOpen = new Array(this.authorPoemsListResponse.length)
+          .fill(false)
       })
       .catch(err => {
         console.error(err)
