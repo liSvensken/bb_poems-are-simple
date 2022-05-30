@@ -1,6 +1,6 @@
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
-import BreadCrumbs from "~/components/bread-crumbs/bread-crumbs.vue";
+import BreadCrumbs, { BreadCrumbInterface } from "~/components/bread-crumbs/bread-crumbs.vue";
 import AboutWhat from "~/@pages/poem/components/about-what/about-what.vue";
 import PoemText from "~/@pages/poem/components/poem-text/poem-text.vue";
 import { getPoemItem } from "~/@api/get-poem-item";
@@ -15,8 +15,8 @@ import { PoemInterface } from "~/interfaces/api/poem.interface";
 })
 
 export default class extends Vue {
-  poemModel: PoemInterface | undefined;
-  breadCrumbsList: { text: string, url: string }[] | undefined;
+  poemModel: PoemInterface | null = null;
+  breadCrumbsList: BreadCrumbInterface[] | undefined;
 
   mounted() {
     this.updatePoem();
@@ -58,9 +58,9 @@ export default class extends Vue {
 </style>
 
 <template>
-  <div>
+  <div v-if="poemModel">
     <div class="section-top">
-      <BreadCrumbs :breadCrumbsListProp="breadCrumbsList"/>
+      <BreadCrumbs v-if="breadCrumbsList" :breadCrumbsListProp="breadCrumbsList"/>
 
       <div class="poem-name-wrapper">
         <div class="gl-page-content">
