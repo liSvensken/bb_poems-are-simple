@@ -6,6 +6,7 @@ import { authorPoemsListResponse } from './fake-api';
 import { AuthorPoemsListInterface } from "~/interfaces/api/author-poems-list.interface";
 import { RouterParamsEnum } from "~/enums/routerParams.enum";
 import Accordion from '~/components/accordion/accordion.vue';
+import { getAuthorsList } from "~/@api/get-authors-list";
 
 const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
   {
@@ -33,6 +34,8 @@ export default class extends Vue {
     .map((item, index) => !index);
 
   mounted() {
+    this.updateAuthorsList();
+
     this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByGrade });
   }
 
@@ -43,6 +46,16 @@ export default class extends Vue {
   onOpen(isOpen: boolean, openIndex: number) {
     this.statesOpen = this.statesOpen
       .map((item, index) => index === openIndex ? isOpen : false);
+  }
+
+  updateAuthorsList(): void {
+    getAuthorsList(100, 0)
+      .then(response => {
+        this.authorPoemsListResponse = response.data.result;
+      })
+      .catch(err => {
+        console.error(err)
+      })
   }
 }
 </script>
