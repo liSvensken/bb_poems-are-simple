@@ -4,6 +4,7 @@ import BreadCrumbs from "~/components/bread-crumbs/bread-crumbs.vue";
 import AboutWhat from "~/@pages/poem/components/about-what/about-what.vue";
 import PoemText from "~/@pages/poem/components/poem-text/poem-text.vue";
 import { PoemInterface, poemModel } from "~/@pages/poem/fake-api";
+import { getPoemItem } from "~/@api/get-poem-item";
 
 @Component({
   components: {
@@ -34,6 +35,20 @@ export default class extends Vue {
       url: "/"
     }
   ];
+
+  mounted() {
+    this.updatePoem();
+  }
+
+  updatePoem(): void {
+    getPoemItem(this.$route.params.poem)
+      .then(response => {
+        this.poemModel = response.data.result[0];
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
 }
 </script>
 

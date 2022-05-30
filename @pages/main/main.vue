@@ -46,7 +46,7 @@ export default class extends Vue {
   randomList = randomList;
 
   mounted() {
-    this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByAuthor })
+    this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByGrade })
     this.animateAppearance();
   }
 
