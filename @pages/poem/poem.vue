@@ -3,8 +3,8 @@ import { Component, Vue } from "nuxt-property-decorator";
 import BreadCrumbs from "~/components/bread-crumbs/bread-crumbs.vue";
 import AboutWhat from "~/@pages/poem/components/about-what/about-what.vue";
 import PoemText from "~/@pages/poem/components/poem-text/poem-text.vue";
-import { PoemInterface, poemModel } from "~/@pages/poem/fake-api";
 import { getPoemItem } from "~/@api/get-poem-item";
+import { PoemInterface } from "~/interfaces/api/poem.interface";
 
 @Component({
   components: {
@@ -15,29 +15,30 @@ import { getPoemItem } from "~/@api/get-poem-item";
 })
 
 export default class extends Vue {
-  poemModel: PoemInterface = poemModel;
-
-  breadCrumbsList = [
-    {
-      text: "Главная",
-      url: "/"
-    },
-    {
-      text: "Выбор стиха",
-      url: "/"
-    },
-    {
-      text: `${ poemModel.authorName.firstName } ${ poemModel.authorName.name.slice(0, 1) }.${ poemModel.authorName.patronymic.slice(0, 1) }.`,
-      url: "/"
-    },
-    {
-      text: `«${ poemModel.poemName }»`,
-      url: "/"
-    }
-  ];
+  poemModel: PoemInterface | undefined;
+  breadCrumbsList: { text: string, url: string }[] | undefined;
 
   mounted() {
     this.updatePoem();
+
+    this.breadCrumbsList = [
+      {
+        text: "Главная",
+        url: "/"
+      },
+      {
+        text: "Выбор стиха",
+        url: "/"
+      },
+      {
+        text: `${ this.poemModel?.authorName.firstName } ${ this.poemModel?.authorName.name.slice(0, 1) }.${ this.poemModel?.authorName.patronymic.slice(0, 1) }.`,
+        url: "/"
+      },
+      {
+        text: `«${ this.poemModel?.poemName }»`,
+        url: "/"
+      }
+    ];
   }
 
   updatePoem(): void {
@@ -96,9 +97,9 @@ export default class extends Vue {
           <a v-if="poemModel.video.social.youtube" :href="poemModel.video.social.youtube" class="social-link">
             <img src="/icons/social/youtube.svg" alt="" class="social-link-icon">
           </a>
-<!--          <a v-if="poemModel.video.social.inst" :href="poemModel.video.social.inst" class="social-link">-->
-<!--            <img src="/icons/social/inst.svg" alt="" class="social-link-icon">-->
-<!--          </a>-->
+          <!--          <a v-if="poemModel.video.social.inst" :href="poemModel.video.social.inst" class="social-link">-->
+          <!--            <img src="/icons/social/inst.svg" alt="" class="social-link-icon">-->
+          <!--          </a>-->
           <a v-if="poemModel.video.social.vk" :href="poemModel.video.social.vk" class="social-link">
             <img src="/icons/social/vk.svg" alt="" class="social-link-icon">
           </a>

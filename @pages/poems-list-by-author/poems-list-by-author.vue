@@ -2,7 +2,6 @@
 import { Component, Vue } from 'nuxt-property-decorator';
 import BreadCrumbs, { BreadCrumbInterface } from '~/components/bread-crumbs/bread-crumbs.vue';
 import { BOOKMARKS_LIST } from "~/utils/const/bookmaks";
-import { authorPoemsListResponse } from './fake-api';
 import { AuthorPoemsListInterface } from "~/interfaces/api/author-poems-list.interface";
 import { RouterParamsEnum } from "~/enums/routerParams.enum";
 import Accordion from '~/components/accordion/accordion.vue';
@@ -29,14 +28,16 @@ const BREAD_CRUMBS_LIST: BreadCrumbInterface[] = [
 export default class extends Vue {
   breadCrumbsList = BREAD_CRUMBS_LIST;
   authorPoemsListResponse: AuthorPoemsListInterface[] = [];
-  statesOpen = new Array(authorPoemsListResponse.length)
-    .fill(false)
-    .map((item, index) => !index);
+  statesOpen: boolean[] = [];
 
   mounted() {
     this.updateAuthorsList();
 
     this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByGrade });
+
+    this.statesOpen = new Array(this.authorPoemsListResponse.length)
+      .fill(false)
+      .map((item, index) => !index);
   }
 
   getLink(urlParam: string) {

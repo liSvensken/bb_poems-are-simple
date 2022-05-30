@@ -1,8 +1,8 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import { randomList } from '~/@pages/main/fake-api-response';
 import { BOOKMARKS_LIST } from "~/utils/const/bookmaks";
 import { RouterParamsEnum } from "~/enums/routerParams.enum";
+import { getRandomPoemsList } from "~/@api/get-random-poems-list";
 
 const STEPS_LIST = [
   {
@@ -43,11 +43,23 @@ export default class extends Vue {
   stepsList = STEPS_LIST;
   arr = [1, 2, 3]
 
-  randomList = randomList;
+  randomList = [];
 
   mounted() {
     this.$store.commit('bookmarks/setList', { list: BOOKMARKS_LIST, pageName: RouterParamsEnum.PoemsListByGrade })
     this.animateAppearance();
+
+    this.updateRandomList();
+  }
+
+  updateRandomList(): void {
+    getRandomPoemsList(5)
+      .then(response => {
+        this.randomList = response.data.result;
+      })
+      .catch(err => {
+        console.error(err)
+      })
   }
 
   animateAppearance() {

@@ -3,7 +3,6 @@ import { Component, Vue } from 'nuxt-property-decorator';
 import BreadCrumbs, { BreadCrumbInterface } from '~/components/bread-crumbs/bread-crumbs.vue';
 import { BookmarkInterface } from "~/store/bookmarks";
 import PoemsList from "~/components/poems-list/poems-list.vue";
-import { poemsList } from "./fake-api";
 import { BOOKMARKS_LIST } from "~/utils/const/bookmaks";
 import { RouterQueryParamsEnum } from "~/enums/routerQueryParams.enum";
 import { getPoemsList } from "~/@api/get-poems-list";
